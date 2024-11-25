@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
+import Dropdown from "@/components/Dropdown";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,16 +32,33 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <h2 className="flex justify-center">Navigation</h2>
+        
+
+        
         {/* <div className="flex gap-6 justify-center font-bold text-fuchsia-400">
           <Link href="/" className="hover:text-fuchsia-600">Home</Link>
           <Link href="/categorias/zapatos" className="hover:text-fuchsia-600">Zapatos</Link>
         </div> */}
-        <ul className="flex gap-6 justify-center font-bold text-fuchsia-400">
-          <Link href="/">Home</Link>
-          <Link href="/login">Login</Link>
-          {categoryArray.map((category) => (<Link href={`/categorias/${category.name}`}>{category.name}</Link>))}
-        </ul>
+        
+        <div className="flex items-center justify-center ">
+
+
+          <ul className="flex gap-6 justify-center font-bold text-fuchsia-400 ">
+            <Link href="/">Home</Link>
+            <Link href="/login">Login</Link>
+
+            {categoryArray.map((category) => (<Link href={`/categorias/${category.name}`}>{category.name}</Link>))}
+
+            
+
+          </ul>
+
+          <div className="fixed right-3 top-4">
+
+            <Dropdown/>
+          </div>
+
+        </div>
         {children}
       </body>
     </html>
