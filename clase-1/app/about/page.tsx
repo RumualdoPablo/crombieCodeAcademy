@@ -21,7 +21,6 @@ const page = () => {
                 className="h-auto max-w-md rounded-lg mb-4"
         />
 
-
         </div>
     </div>
     
