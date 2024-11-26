@@ -7,8 +7,8 @@ const Dashboard = () => {
     const router = useRouter();
 
     useEffect(() => {
-        const isLoggedIn = localStorage.getItem("isLoggedIn");
-        if (isLoggedIn != "true") {
+        const isLoggedIn = localStorage.getItem("isLoggedIn"); 
+        if (isLoggedIn === "false") {
             router.replace("/login");
             // alert("Ups! Parece que no estas logeado")
         }
