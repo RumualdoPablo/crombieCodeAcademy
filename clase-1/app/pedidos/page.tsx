@@ -1,3 +1,11 @@
+// 14. Requerimiento: Seguimiento de Pedidos 
+// Permitir a los usuarios verificar el estado de sus pedidos. 
+// Formulario de Seguimiento: 
+// Incluir un campo donde el usuario pueda ingresar un número de pedido. 
+// Estado Simulado: 
+// Mostrar información como "En proceso", "Enviado" o "Entregado
+//  se cambio por "Entregado", "en viaje" y "cancelado"
+
 "use client"
 import React from 'react'
 import { useState } from 'react';
