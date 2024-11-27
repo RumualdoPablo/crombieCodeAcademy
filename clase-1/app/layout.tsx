@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
+import SearchBar from "./components/Searchbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Link href="/" className="hover:text-fuchsia-600">Home</Link>
           <Link href="/categorias/zapatos" className="hover:text-fuchsia-600">Zapatos</Link>
         </div> */}
+        <SearchBar/>
         <ul className="flex gap-6 justify-center font-bold text-fuchsia-400">
           <Link href="/">Home</Link>
           <Link href="/login">Login</Link>
