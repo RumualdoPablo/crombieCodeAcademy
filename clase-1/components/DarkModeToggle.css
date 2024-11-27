@@ -1,0 +1,7 @@
+.dark-mode-off {
+    background-image: url("/toggle-off-icon.png");
+}
+
+.dark-mode-on {
+    background-image: url("/toggle-on-icon.png");
+}
