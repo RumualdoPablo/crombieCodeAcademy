@@ -40,7 +40,7 @@ const Login = () => {
                         onClick={handleLogin}
                         className="w-full bg-green-600 text-white py-2 rounded-lg font-semibold shadow-md hover:bg-green-700 transition duration-300"
                     >
-                        Iniciar Sesión
+                        Iniciar Sesiónn
                     </button>
                 </div>
             </div>
