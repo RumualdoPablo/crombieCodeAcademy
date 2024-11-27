@@ -40,6 +40,7 @@ export default function RootLayout({
           <Link href="/">Home</Link>
           <Link href="/login">Login</Link>
           {categoryArray.map((category) => (<Link href={`/categorias/${category.name}`}>{category.name}</Link>))}
+          <Link href="/about">About</Link>
         </ul>
         {children}
       </body>
