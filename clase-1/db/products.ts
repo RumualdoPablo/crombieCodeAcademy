@@ -1,4 +1,14 @@
-const productos = [
+export type ProductType = {
+  id: number;
+  nombre: string;
+  precio: number;
+  imagen: string;
+  categoria: string;
+  tallas?: string[] | number[] | null;
+  enStock: boolean;
+  descripcion: string;
+};
+export const productos = [
   {
     id: 1,
     nombre: "Camisa Azul Casual",
