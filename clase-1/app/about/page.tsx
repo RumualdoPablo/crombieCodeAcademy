@@ -9,6 +9,8 @@ function about() {
         '/empresa3.jpg', 
         '/empresa4.jpg', 
         '/empresa5.jpg', 
+        '/empresa6.jpg', 
+        '/empresa7.jpg', 
       ];
 
     return (
@@ -52,26 +54,40 @@ function about() {
                         <div className="w-full max-w-2xl"> 
                             <Carousel images={images} />
                         </div>
-                    </div>
+                 
+               
+                    {/* <div className="relative w-full max-w-2xl mx-auto h-72"> 
+                        <div className="overflow h-full relative"> 
+                                    
+                            <img
+                                src="/empresa1.jpg"
+                                alt="Nuestra empresa"
+                                className="h-auto max-w-md rounded-lg mb-4"
+                            /> 
+                            <img
+                                src="/empresa2.jpg"
+                                alt="Nuestra empresa"
+                                className="h-auto max-w-md rounded-lg mb-4"
+                            /> 
+                            <img
+                                src="/empresa3.jpg"
+                                alt="Nuestra empresa"
+                                className="h-auto max-w-md rounded-lg mb-4"
+                                /> 
+                
+                            <img
+                                src="/empresa4.jpg"
+                                alt="Nuestra empresa"
+                                className="h-auto max-w-md rounded-lg mb-4"
+                                />                                      
+                        </div>
+                    </div> */}
 
-                {/* <img
-                    src="https://media.istockphoto.com/id/499785795/photo/analyzing-electronic-document.jpg?s=612x612&w=0&k=20&c=PYrD8albkJQHy_sgjIFCEScjfe-4DTylouvEL-oHfOU="
-                    alt="Nuestra empresa"
-                    className="h-auto max-w-md rounded-lg mb-4"
-                />
-                <img
-                    src="https://media.istockphoto.com/id/1349030917/es/foto/negocios-y-finanzas-mirando-hacia-los-edificios-de-oficinas-de-gran-altura-en-el-distrito.jpg?s=612x612&w=0&k=20&c=_L5sYNxsZaMlEpbT00mwuAfWKps5MqLoCBTLMukFgF0="
-                    alt="Nuestra empresa"
-                    className="h-auto max-w-md rounded-lg mb-4"
-                />
-                <img
-                    src="https://media.istockphoto.com/id/1365436662/es/foto/asociaci%C3%B3n-de-%C3%A9xito.jpg?s=612x612&w=0&k=20&c=FncLRnhPerwS05mDOuA5jFVDDqBapb4Y0DZjzUMD_gk="
-                    alt="Nuestra empresa"
-                    className="h-auto max-w-md rounded-lg mb-4"
-                /> */}
-                </div>
+                </div>    
+                    
             </div>
         </div>
+    </div>
     );
 }
 
