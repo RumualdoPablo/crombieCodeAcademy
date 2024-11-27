@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
+import ClientSupport from "./components/clientSupport/clientSupport";
+
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -51,7 +53,9 @@ export default function RootLayout({
                         >
                             {category.name}
                         </Link>
-                    ))}
+                    ))}                     
+                    <ClientSupport />
+
                 </ul>
                 {children}
             </body>
