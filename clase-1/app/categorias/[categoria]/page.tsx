@@ -49,19 +49,19 @@ export default async function page({
   switch(categoria){
     case "women": 
       indexImage = 0;
-      nombreProducto = "zapatilla";
+      nombreProducto = 0;
       break;
     case "men": 
     indexImage = 1;
-    nombreProducto = "camisa";
+    nombreProducto = 1;
     break;
     case "kids": 
     indexImage = 2;
-    nombreProducto = "jean";
+    nombreProducto = 2;
     break;
     case "outlet": 
     indexImage = 3;
-    nombreProducto = "remera";
+    nombreProducto = 3;
     break;
   }
 
