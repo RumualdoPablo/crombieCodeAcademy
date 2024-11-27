@@ -1,4 +1,4 @@
-const productos = [
+export const productos = [
   {
     id: 1,
     nombre: "Camisa Azul Casual",
@@ -6,7 +6,7 @@ const productos = [
     imagen: "/images/camisa-azul.jpg",
     categoria: "Ropa",
     tallas: ["S", "M", "L", "XL"],
-    enStock: true,
+    enStock: false,
     descripcion: "Camisa azul de algodón, ideal para uso casual.",
   },
   {
