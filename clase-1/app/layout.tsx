@@ -44,6 +44,7 @@ export default function RootLayout({
                 <ul className="flex gap-6 justify-center font-bold text-fuchsia-400">
                     <Link href="/">Home</Link>
                     <Link href="/login">Login</Link>
+                    <Link href="/products">Products</Link>
                     {categoryArray.map((category) => (
                         <Link
                             key={category.name}
