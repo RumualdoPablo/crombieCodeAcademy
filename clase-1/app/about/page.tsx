@@ -15,7 +15,7 @@ function about() {
                 </div>
                 <div className="relative w-[200px] h-[200px]">
                     <Image src="/bluelight.jpg" alt="Miembro Nacho Debuck" fill className="rounded object-cover" />
-                    <h2 className="absolute inset-0 flex justifyd-center items-center text-white font-bold bg-black/50 rounded">
+                    <h2 className="absolute inset-0 flex justify-center items-center text-white font-bold bg-black/50 rounded">
                         Nacho Debuck
                     </h2>
                 </div>
