@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import ToggleDarkMode from "@/components/ToggleDarkMode"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,22 +29,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <h2 className="flex justify-center">Navigation</h2>
-        {/* <div className="flex gap-6 justify-center font-bold text-fuchsia-400">
-          <Link href="/" className="hover:text-fuchsia-600">Home</Link>
-          <Link href="/categorias/zapatos" className="hover:text-fuchsia-600">Zapatos</Link>
-        </div> */}
-        <ul className="flex gap-6 justify-center font-bold text-fuchsia-400">
-          <Link href="/">Home</Link>
-          <Link href="/login">Login</Link>
-          {categoryArray.map((category) => (<Link href={`/categorias/${category.name}`}>{category.name}</Link>))}
-        </ul>
-        {children}
-      </body>
-    </html>
+    <ThemeProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <h2 className="flex justify-center">Navigation</h2>
+          {/* <div className="flex gap-6 justify-center font-bold text-fuchsia-400">
+            <Link href="/" className="hover:text-fuchsia-600">Home</Link>
+            <Link href="/categorias/zapatos" className="hover:text-fuchsia-600">Zapatos</Link>
+          </div> */}
+          <ul className="flex gap-6 justify-center font-bold text-fuchsia-400">
+            <Link href="/">Home</Link>
+            <Link href="/login">Login</Link>
+            {categoryArray.map((category) => (<Link href={`/categorias/${category.name}`}>{category.name}</Link>))}
+            <ToggleDarkMode/>
+          </ul>
+          {children}
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }
