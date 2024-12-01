@@ -32,14 +32,14 @@ export default function RootLayout({
     <ThemeProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} dark:bg-slate-950 bg-gray-50 text-gray-700 dark:text-white antialiased`}
         >
           <h2 className="flex justify-center">Navigation</h2>
           {/* <div className="flex gap-6 justify-center font-bold text-fuchsia-400">
             <Link href="/" className="hover:text-fuchsia-600">Home</Link>
             <Link href="/categorias/zapatos" className="hover:text-fuchsia-600">Zapatos</Link>
           </div> */}
-          <ul className="flex gap-6 justify-center font-bold text-fuchsia-400">
+          <ul className="flex gap-6 justify-center font-bold dark:text-fuchsia-400 text-blue-700">
             <Link href="/">Home</Link>
             <Link href="/login">Login</Link>
             {categoryArray.map((category) => (<Link href={`/categorias/${category.name}`}>{category.name}</Link>))}
