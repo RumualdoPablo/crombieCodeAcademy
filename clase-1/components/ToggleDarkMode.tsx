@@ -8,7 +8,7 @@ const ToggleDarkMode = () => {
     return (
         <button
             onClick={toggleDarkMode}
-            className="px-4 py-2 bg-gray-200 dark:bg-gray-700 dark-text-white  rounded"
+            className="absolute right-2 top-4 px-6 py-1 bg-gray-200 dark:bg-slate-800 dark-text-white  rounded"
         >{isDarkMode?"🌝":"🌞"}</button>
     )
 }
