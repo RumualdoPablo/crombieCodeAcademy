@@ -1,7 +1,5 @@
 "use client";
 
-import { revalidatePath } from "next/cache";
-
 export function addToCart(productId: string | { productId: string }) {
     const id = typeof productId === "string" ? productId : productId.productId;
 
