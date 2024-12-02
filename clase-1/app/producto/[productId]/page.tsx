@@ -1,4 +1,6 @@
+import { productos } from "@/db/products";
 import Image from "next/image";
+import { AddToCartButton } from "./addToCart";
 
 type ProductTypes = {
     id: number;
@@ -17,37 +19,36 @@ export default async function Product({
 }) {
     const productId = (await params).productId;
 
-    const data = await fetch(`https://fakestoreapi.com/products/${productId}`);
-    const product: ProductTypes = await data.json();
+    const product = productos.find(
+        (product) => product.id.toString() === productId
+    );
 
-    return (
+    return product ? (
         <main className="flex flex-col md:flex-row gap-12 p-8 md:p-32 items-center md:items-start justify-center">
             <Image
-                src={product.image}
+                src="/placeholder-100x100.png"
+                // src={product.imagen}
                 width={250}
                 height={250}
-                alt={`image of ${product.title}`}
+                alt={`image of ${product.nombre}`}
             />
             <div className="flex flex-col gap-4 items-center md:items-start">
                 <h1 className="text-3xl md:text-5xl text-center md:text-left">
-                    {product.title}
+                    {product.nombre}
                 </h1>
                 <p className="text-center md:text-left">
-                    {product.description}
+                    {product?.descripcion}
                 </p>
                 <span className="text-2xl">
                     {new Intl.NumberFormat("en-US", {
                         style: "currency",
                         currency: "ARS",
-                    }).format(product.price)}
+                    }).format(product?.precio)}
                 </span>
-
                 <div className="w-full md:w-64 mt-auto">
-                    <button className="dark:bg-white bg-black p-4 text-white dark:text-black rounded-md hover:opacity-80 hover:cursor-pointer w-full">
-                        Comprar ahora
-                    </button>
+                    <AddToCartButton productId={productId} />
                 </div>
             </div>
         </main>
-    );
+    ) : null;
 }
