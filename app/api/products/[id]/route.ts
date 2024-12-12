@@ -1,39 +1,26 @@
-import { NextResponse } from "next/server";
+import { PrismaClient } from "@prisma/client/extension";
+import { NextRequest, NextResponse } from "next/server";
 
-const products = [
-  { id: 1, name: "Laptop", price: 1200 },
-  { id: 2, name: "Phone", price: 800 },
-];
+const prisma = new PrismaClient({});
 
-export async function GET(req: Request, { params: {} }) {
-  const { id } = params;
-  const product = products.find((p) => p.id === parseInt(id));
-
-  if (!product) {
-    return NextResponse.json(
-      { message: `Product with id ${id} not found` },
-      { status: 404 }
-    );
-  }
-
-  return NextResponse.json(product);
+export async function GET(req: NextRequest, {params}) {
+  const parameterId = await params.id;
+  const product = await prisma.product.findUnique({
+    where: {id:parseInt(parameterId)}
+  });
+  return new NextResponse(JSON.stringify(product),{status: 200})
 }
 
-export async function DELETE(req, { params }:{para}) {
-  const { id } = params;
-  const index = products.findIndex((p) => p.id === parseInt(id));
-
-  if (index === -1) {
-    return NextResponse.json(
-      { message: `Product with id ${id} not found` },
-      { status: 404 }
-    );
+export async function POST(req:NextRequest) {
+const {name,description,price,stock,category} = await req.json();
+const productCreated = await prisma.product.create({
+  data:{
+    name:name,
+    description:description,
+    stock:stock,
+    price:price,
+    category:category
   }
-
-  products.splice(index, 1);
-
-  return NextResponse.json(
-    { message: `Product with id ${id} deleted successfully` },
-    { status: 200 }
-  );
+});
+return new NextResponse(JSON.stringify(productCreated),{status: 200});
 }
