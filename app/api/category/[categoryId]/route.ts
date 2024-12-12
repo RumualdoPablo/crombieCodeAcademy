@@ -3,8 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 const prisma = new PrismaClient({});
 
-export async function GET(req: NextRequest, {params}: {params : {categoryID: string}}) {
-  const parameterId = await params.categoryID;
+export async function GET(req: NextRequest, {params}: {params : {categoryId: string}}) {
+  const parameterId = await params.categoryId;
   const category = await prisma.category.findUnique({
     where: {id:parseInt(parameterId)}
   });
@@ -14,16 +14,16 @@ export async function GET(req: NextRequest, {params}: {params : {categoryID: str
   return new NextResponse(JSON.stringify(category),{status: 200})
 }
 
-export async function DELETE(req: NextRequest, {params}: {params : {categoryID : string}}) {
-  const parameterId = await params.categoryID;
+export async function DELETE(req: NextRequest, {params}: {params : {categoryId : string}}) {
+  const parameterId = await params.categoryId;
   const category = await prisma.category.delete({
     where: {id:parseInt(parameterId)}
   });
   return new NextResponse(JSON.stringify(category),{status: 200})
 }
 
-export async function PUT(req: NextRequest, {params}: {params : {categoryID : string}}) {
-  const parameterId = await params.categoryID;
+export async function PUT(req: NextRequest, {params}: {params : {categoryId : string}}) {
+  const parameterId = await params.categoryId;
   try {
     // Obtener los datos enviados en el cuerpo de la solicitud
     const { name } = await req.json();

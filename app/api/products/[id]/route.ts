@@ -20,10 +20,10 @@ export async function GET(req: NextRequest, {params} : { params: {id : string} }
 }
 
 export async function DELETE(req: NextRequest,
-  {params}: {params: {productId: string}}
+  {params}: {params: {id: string}}
 ) {
 
-  const parametroId = await params.productId;
+  const parametroId = await params.id;
 
   // COMPROBACION QUE EL PRODUCTO EXISTE
   const producto = await prisma.product.findUnique({
@@ -45,9 +45,9 @@ export async function DELETE(req: NextRequest,
 
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { productId: string } }
+  { params }: { params: { id: string } }
 ) {
-  const parametroId = params.productId; // ID dinámico desde la URL
+  const parametroId = params.id; // ID dinámico desde la URL
 
   try {
     // Obtener los datos enviados en el cuerpo de la solicitud

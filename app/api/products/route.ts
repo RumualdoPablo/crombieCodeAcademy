@@ -26,10 +26,10 @@ const {
   description,
   price,
   stock,
-  categoryID
+  categoryId
 } = await req.json();
 
-if (!name || !price || !stock || !categoryID) {
+if (!name || !price || !stock || !categoryId) {
   return new NextResponse(
     JSON.stringify({ error: "More fields requeried" }),
     { status: 400 }
@@ -42,7 +42,7 @@ try {
             description, 
             price, 
             stock, 
-            categoryID
+            categoryId,
           },
   });
 

@@ -40,10 +40,10 @@ model Product{
   description String
   price Float
   stock Int
-  categoryID Int 
-  category Category @relation(fields: [categoryID], references: [id])
+  categoryId Int 
+  category Category @relation(fields: [categoryId], references: [id])
   created_at DateTime @default(now())
-  updated_at DateTime
+  updated_at DateTime @updatedAt
 }
 
 model Category{
